@@ -1,5 +1,19 @@
+/* Goolge Fonts */
+/* Plus Jakarta Font family link */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+/* Inter Font family link */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+  --font-jakarta:"Plus Jakarta Sans", sans-serif;
+}
+@theme {
+  --font-inter:"Inter", sans-serif;
+}
 
 body {
   margin: 0;
