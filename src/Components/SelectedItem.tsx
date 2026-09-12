@@ -10,7 +10,10 @@ interface SelectedItemPropsType {
 
 const SelectedItem = ({ tech, addedTechnology, setAddedTechnology }: SelectedItemPropsType) => {
 
-
+    const handleRemoveItem =(tech : technologyDataType)=>{
+        const remainingItem = addedTechnology.filter(item=> item.name !== tech.name )
+        setAddedTechnology(remainingItem);
+    }
 
 
     return (
@@ -28,7 +31,7 @@ const SelectedItem = ({ tech, addedTechnology, setAddedTechnology }: SelectedIte
                         <h2 className="font-bold text-lg text-slate-900">{tech.name}</h2>
                         <p className="font-bold text-xs text-slate-400">{tech.category}</p>
                     </div>
-                    <div className="mr-5"><span 
+                    <div className="mr-5"><span onClick={()=>handleRemoveItem(tech)}
                     className="cursor-pointer"
                     ><RxCross1 /></span></div>
                 </div>
