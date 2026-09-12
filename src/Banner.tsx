@@ -2,9 +2,9 @@ import hero from './assets/banner-stack.png'
 
 const Banner = () => {
     return (
-        <div>
+        <div className='lg:mt-20 mt-8 lg:mb-28 mb-2'>
             <div className="hero bg-white container mx-auto">
-                <div className="hero-content flex-col lg:flex-row-reverse lg:flex lg:justify-between">
+                <div className="hero-content flex-col-reverse lg:flex-row-reverse lg:flex lg:justify-between">
                     <img
                         alt="Tailwind CSS hero component"
                         src={hero}

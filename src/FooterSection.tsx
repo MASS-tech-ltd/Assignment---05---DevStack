@@ -2,11 +2,11 @@ import footerlogo from './assets/logo-text.png'
 
 const FooterSection = () => {
     return (
-        <div className='mt-24 mb-10 lg:mt-60 lg:mb-16'>
+        <div className='mt-24 mb-10 lg:mt-40 lg:mb-6'>
             <footer className=" container mx-auto footer lg:flex lg:justify-between sm:footer-horizontal">
                 <div>
                     <img className='mx-auto lg:mx-0' src={footerlogo} alt="Footer-Logo" />
-                    <p className='text-center lg:text-left w-[384px] text-xm font-normal text-slate-500 mt-2 lg:mt-2.5 lg:mb-6 mb-3 '>
+                    <p className='text-center lg:text-left w-[384px] text-xm font-normal text-slate-500 mt-2,,,,,,,,,,,,,,,,,,,,, lg:mt-2.5 lg:mb-6 mb-3 '>
                         Curated tools, technologies, and resources for developers building
                         modern software.
                     </p>
