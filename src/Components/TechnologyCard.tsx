@@ -1,19 +1,33 @@
 import { FaCheck, FaStar } from "react-icons/fa";
 import type { technologyDataType } from "../Types/Types";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { useState, type Dispatch, type SetStateAction } from "react";
+import { Bounce, toast } from "react-toastify";
 
 interface TechnologyCardPropsType {
     technology: technologyDataType
+    addedTechnology: technologyDataType[]
+    setAddedTechnology: Dispatch<SetStateAction<technologyDataType[]>>
 }
 
-const TechnologyCard = ({ technology }: TechnologyCardPropsType) => {
+const TechnologyCard = ({ technology, addedTechnology, setAddedTechnology }: TechnologyCardPropsType) => {
 
     const [isAdded, setIsAdded] = useState<boolean>(false);
 
     const hanldAddToStack = () => {
         setIsAdded(true)
-        toast.success(`${technology.name} is added successfully`)
+        toast.success(`${technology.name} is added successfully`, {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Bounce,
+        });
+
+        setAddedTechnology([...addedTechnology, technology])
     }
 
     return (

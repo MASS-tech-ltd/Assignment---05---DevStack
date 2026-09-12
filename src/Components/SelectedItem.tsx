@@ -1,8 +1,38 @@
+import type { Dispatch, SetStateAction } from "react";
+import type { technologyDataType } from "../Types/Types";
+import { RxCross1 } from "react-icons/rx";
 
-const SelectedItem = () => {
+interface SelectedItemPropsType {
+    addedTechnology: technologyDataType[]
+    setAddedTechnology: Dispatch<SetStateAction<technologyDataType[]>>
+    tech: technologyDataType
+}
+
+const SelectedItem = ({ tech, addedTechnology, setAddedTechnology }: SelectedItemPropsType) => {
+
+
+
+
     return (
-        <div className="border border-slate-200 rounded-2xl font-jakarta h-75">
-            <h1 className="font-bold text-base px-5.5 pt-5.5">Your Stacks</h1>
+        <div className="mt-3 flex justify-center gap-2">
+            <div className="w-82 border border-slate-200 flex pl-5 py-3 rounded-xl bg-base-100 shadow-sm font-jakarta">
+                <figure>
+                    <img
+                        className="w-12 h-auto"
+                        src={tech.icon}
+                        alt="Technology logo"
+                    />
+                </figure>
+                <div className="flex items-center justify-between w-full ">
+                    <div className="ml-4">
+                        <h2 className="font-bold text-lg text-slate-900">{tech.name}</h2>
+                        <p className="font-bold text-xs text-slate-400">{tech.category}</p>
+                    </div>
+                    <div className="mr-5"><span 
+                    className="cursor-pointer"
+                    ><RxCross1 /></span></div>
+                </div>
+            </div>
         </div>
     );
 };

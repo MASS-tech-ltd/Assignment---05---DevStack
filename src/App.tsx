@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <Nav></Nav>
-      <Suspense fallback={<h2 className="font-jakarta font-semibold text-3xl text-slate-700">Loading...</h2>}>
+      <Suspense fallback={<h2 className="font-jakarta font-semibold lg:text-3xl text-xl text-slate-700 text-center">Loading...</h2>}>
         <TechnologyStack technologysPromise={TechnologysPromise()}></TechnologyStack>
       </Suspense>
       <FooterSection></FooterSection>
