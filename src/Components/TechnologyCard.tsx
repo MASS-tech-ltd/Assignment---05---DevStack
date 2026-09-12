@@ -1,6 +1,7 @@
 import { FaCheck, FaStar } from "react-icons/fa";
 import type { technologyDataType } from "../Types/Types";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface TechnologyCardPropsType {
     technology: technologyDataType
@@ -12,6 +13,7 @@ const TechnologyCard = ({ technology }: TechnologyCardPropsType) => {
 
     const hanldAddToStack = () => {
         setIsAdded(true)
+        toast.success(`${technology.name} is added successfully`)
     }
 
     return (
@@ -47,12 +49,13 @@ const TechnologyCard = ({ technology }: TechnologyCardPropsType) => {
                             </h5>
                         </div>
                     </div>
-                    <button onClick={hanldAddToStack} className={`w-full font-medium text-sm text-white text-center 
-                            rounded-lg py-2.5 
-                        ${isAdded
-                            ? "bg-purple-700 "
-                            : "bg-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
-                        }`}
+                    <button onClick={hanldAddToStack}
+                        disabled={isAdded}
+                        className={`w-full font-medium text-sm text-white text-center rounded-lg py-2.5 
+                        ${isAdded ? "bg-purple-700"
+                                : "bg-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+                            }`}
+
                     >{isAdded && <FaCheck className="inline mr-2"></FaCheck>}
                         Add to Stack</button>
                 </div>
