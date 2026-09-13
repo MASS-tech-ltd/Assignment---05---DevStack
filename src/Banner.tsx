@@ -11,9 +11,9 @@ const Banner = () => {
                         className="max-w-sm"
                     />
                     <div>
-                        <h1 className="lg:font-extrabold font-bold font-inter lg:text-6xl text-3xl"><span className='text-slate-900 '>Build Your Ideal</span><br />
+                        <h1 className="lg:font-extrabold lg:text-left text-center font-bold font-inter lg:text-6xl text-3xl"><span className='text-slate-900 '>Build Your Ideal</span><br />
                             <span className="bg-linear-to-r from-orange-600 to-purple-700 bg-clip-text text-transparent">Development Stack</span></h1>
-                        <p className="font-jakarta font-normal lg:text-lg text-sm lg:w-xl w-87 text-slate-600 py-6">
+                        <p className="font-jakarta font-normal lg:text-lg lg:text-left text-center text-sm lg:w-xl w-87 text-slate-600 py-6">
                             Explore frontend, backend, database, and tooling options,
                             compare them side by side, and put together the stack that fits your
                             next project.

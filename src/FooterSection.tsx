@@ -6,7 +6,7 @@ const FooterSection = () => {
             <footer className=" container mx-auto footer lg:flex lg:justify-between sm:footer-horizontal">
                 <div>
                     <img className='mx-auto lg:mx-0' src={footerlogo} alt="Footer-Logo" />
-                    <p className='text-center lg:text-left w-[384px] text-xm font-normal text-slate-500 mt-2,,,,,,,,,,,,,,,,,,,,, lg:mt-2.5 lg:mb-6 mb-3 '>
+                    <p className='text-center lg:ml-0 ml-4  lg:text-left w-[384px] text-xm font-normal text-slate-500 mt-2 lg:mt-2.5 lg:mb-6 mb-3 '>
                         Curated tools, technologies, and resources for developers building
                         modern software.
                     </p>
