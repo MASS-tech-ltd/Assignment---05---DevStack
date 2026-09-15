@@ -14,8 +14,18 @@ const TechnologyCard = ({ technology, addedTechnology, setAddedTechnology }: Tec
     const isAdded = addedTechnology.some((item) => item.id === technology.id);
 
     const hanldAddToStack = () => {
-        toast.success(`${technology.name} is added successfully`, {
-            position: "bottom-right",
+
+        isAdded ? toast.warning(`${technology.name} is already added`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+            transition: Bounce,
+        }) :( toast.success(`${technology.name} is added successfully`, {
+            position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
             closeOnClick: false,
@@ -24,10 +34,11 @@ const TechnologyCard = ({ technology, addedTechnology, setAddedTechnology }: Tec
             progress: undefined,
             theme: "light",
             transition: Bounce,
-        });
-
+        }),
         setAddedTechnology([...addedTechnology, technology])
-    }
+        )
+    
+}
 
     return (
         <div>
@@ -63,7 +74,6 @@ const TechnologyCard = ({ technology, addedTechnology, setAddedTechnology }: Tec
                         </div>
                     </div>
                     <button onClick={hanldAddToStack}
-                        disabled={isAdded}
                         className={`w-full font-medium text-sm text-white text-center rounded-lg py-2.5 
                         ${isAdded ? "bg-purple-700"
                                 : "bg-slate-950 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"

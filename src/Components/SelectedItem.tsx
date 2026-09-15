@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { technologyDataType } from "../Types/Types";
 import { RxCross1 } from "react-icons/rx";
+import { Bounce, toast } from "react-toastify";
 
 interface SelectedItemPropsType {
     addedTechnology: technologyDataType[]
@@ -13,6 +14,17 @@ const SelectedItem = ({ tech, addedTechnology, setAddedTechnology }: SelectedIte
     const handleRemoveItem =(tech : technologyDataType)=>{
         const remainingItem = addedTechnology.filter(item=> item.name !== tech.name )
         setAddedTechnology(remainingItem);
+
+        toast.info(`${tech.name} removed from your stack`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+            transition: Bounce,
+        })
     }
 
 

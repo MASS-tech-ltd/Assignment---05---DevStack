@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { technologyDataType } from "../Types/Types";
 import SelectedItem from "./SelectedItem";
+import { Bounce, toast } from "react-toastify";
 
 interface YourStacksPropsType {
     addedTechnology: technologyDataType[]
@@ -9,6 +10,19 @@ interface YourStacksPropsType {
 
 const YourStacks = ({ addedTechnology, setAddedTechnology }: YourStacksPropsType) => {
 
+    const handleRemoveAll = () => {
+        setAddedTechnology([])
+        toast.info(`Removed all from your stack`, {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "light",
+            transition: Bounce,
+        })
+    }
 
     return (
         <div className="border border-slate-200 rounded-2xl font-jakarta">
@@ -41,8 +55,8 @@ const YourStacks = ({ addedTechnology, setAddedTechnology }: YourStacksPropsType
                     </div>
                     {/* Remove All  */}
                     <div className="flex justify-center mt-5 mb-5">
-                        <button onClick={() => setAddedTechnology([])}
-                        className="w-82 font-inter font-medium text-sm outline-red-600 btn  rounded-xl text-[#d82c20]">Remove All</button>
+                        <button onClick={handleRemoveAll}
+                            className="w-82 font-inter font-medium text-sm outline-red-600 btn  rounded-xl text-[#d82c20]">Remove All</button>
                     </div>
 
                 </div>
